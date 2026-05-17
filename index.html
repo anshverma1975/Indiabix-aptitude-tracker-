@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aptitude Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ░░ HOME SCREEN ░░ -->
+  <div id="homeScreen" class="screen">
+    <div class="container">
+      <div class="header-top">
+        <div>
+          <p class="tiny">APTITUDE TRACKER</p>
+          <h1>Aptitude for Placement !🎯</h1>
+        </div>
+        <div class="streak-badge" id="headerStreak">🔥 0 day streak</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num" id="statDone">0</div>
+          <div class="stat-label">completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="statLeft">35</div>
+          <div class="stat-label">remaining</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="statPct">0%</div>
+          <div class="stat-label">progress</div>
+        </div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="overallBar" style="width:0%"></div>
+      </div>
+
+      <!-- ░░ CURRENT TOPIC BANNER ░░ -->
+      <div id="currentTopicBanner" class="current-topic-banner hidden">
+        <div class="current-topic-left">
+          <p class="current-topic-label">CURRENTLY STUDYING</p>
+          <p class="current-topic-name" id="currentTopicName"></p>
+          <p class="current-topic-sub" id="currentTopicSub"></p>
+        </div>
+        <button class="current-topic-btn" id="currentTopicBtn">Continue →</button>
+      </div>
+
+      <p class="section-label">TOPICS</p>
+      <div class="topic-grid" id="topicGrid"></div>
+      <div id="completedSection" class="hidden">
+        <p class="section-label">COMPLETED ✓</p>
+        <div class="topic-grid" id="completedGrid"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ░░ TOPIC SCREEN ░░ -->
+  <div id="topicScreen" class="screen hidden">
+    <div class="container">
+      <button class="back-btn" onclick="goHome()">← Back to Topics</button>
+      <p class="tiny">CURRENT TOPIC</p>
+      <h1 id="focusTitle"></h1>
+      <a id="topicMainLink" href="#" target="_blank" class="open-link">Open on IndiaBix ↗</a>
+      <div class="circle-wrap">
+        <svg viewBox="0 0 180 180" width="160" height="160">
+          <circle class="circle-bg"       cx="90" cy="90" r="70" />
+          <circle class="circle-progress" cx="90" cy="90" r="70" id="circleProgress" />
+        </svg>
+        <div class="circle-text" id="circleText">0%</div>
+      </div>
+      <p class="section-label">SUBTOPICS</p>
+      <div id="subtopicsList"></div>
+      <div class="daily-box">
+        <p class="daily-label">Did you practice today?</p>
+        <button class="quota-btn" id="quotaBtn" onclick="markToday()">YES I DID ✓</button>
+        <div class="streak-display">🔥 <span id="streakDisplay">0</span> day streak</div>
+      </div>
+      <button class="complete-btn" onclick="markTopicComplete()">Mark Topic as Complete ✓</button>
+    </div>
+  </div>
+  <!-- ░░ CELEBRATION OVERLAY ░░ -->
+  <div id="celebration" class="celebration hidden">
+    <div class="celebration-card">
+      <div class="celebration-emoji">🎉</div>
+      <div class="celebration-title">Topic Complete!</div>
+      <p class="celebration-sub" id="celebSub">Keep up the momentum!</p>
+      <button class="celebration-btn" onclick="closeCelebration()">Continue →</button>
+    </div>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
