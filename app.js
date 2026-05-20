@@ -190,4 +190,17 @@ function closeCelebration() {
 }
 
 /* ── Init ── */
+(function checkStreakOnLoad() {
+  if (!state.lastDate) return;
+  const last = new Date(state.lastDate);
+  const today = new Date();
+  last.setHours(0,0,0,0);
+  today.setHours(0,0,0,0);
+  const diffDays = Math.round((today - last) / 86400000);
+  if (diffDays > 1) {
+    state.streak = 0;
+    save();
+  }
+})();
+
 renderHome();
