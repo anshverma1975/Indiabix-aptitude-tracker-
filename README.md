@@ -4,6 +4,8 @@ A clean, static web app to help you track your aptitude preparation across all 3
 
 **Live Demo → [indiabix-aptitude-tracker.vercel.app](https://indiabix-aptitude-tracker.vercel.app)**
 
+<img src="https://api.visitorbadge.io/api/VisitorHit?user=anshverma1975&repo=indiabix-aptitude-tracker&label=VIEWS&countColor=7c3aed&labelColor=1e1b4b" alt="Views" />
+
 ---
 
 ## ✨ Features
